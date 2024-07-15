@@ -312,10 +312,7 @@ function ready() {
     .center(cloud3)
     .mov(80, 30);
 
-   
     let tempText =10;
-
-
     let consoleTicker = Ticker.add(() => {
  
       const minLineLength = 1; // Minimum length of the temperature line
@@ -337,7 +334,7 @@ function ready() {
         
         vapor.animate({
           target: vapor,
-          props: { y: 200, scale: 0.5, alpha: 1 },
+          props: { y: 200, scale: 0.2, alpha: 1 },
           time: 3,
           loop: true,
           ease: "quadIn",
@@ -345,7 +342,7 @@ function ready() {
 
         vapor1.animate({
           target: vapor1,
-          props: { y: 200, scale: 0.5, alpha: 1 },
+          props: { y: 200, scale: 0.2, alpha: 1 },
           time: 3,
           loop: true,
           ease: "quadIn",
@@ -353,7 +350,7 @@ function ready() {
 
         vapor2.animate({
           target: vapor2,
-          props: { y: 200, scale: 0.5, alpha: 1 },
+          props: { y: 200, scale: 0.2, alpha: 1 },
           time: 3,
           loop: true,
           ease: "quadIn",
@@ -361,7 +358,7 @@ function ready() {
 
         vapor3.animate({
           target: vapor3,
-          props: { y: 200, scale: 0.5, alpha: 1 },
+          props: { y: 200, scale: 0.2, alpha: 1 },
           time: 3,
           loop: true,
           ease: "quadIn",
@@ -383,6 +380,13 @@ function ready() {
           time: 15,
           loop: false,
           ease: "linear",
+          call: () => {
+           vapor.removeFrom(Frame.stage);
+            vapor1.removeFrom(Frame.stage);
+            vapor2.removeFrom(Frame.stage);
+            vapor3.removeFrom(Frame.stage);
+            vapor4.removeFrom(Frame.stage);
+          }
         });
 
         cloud2.animate({
